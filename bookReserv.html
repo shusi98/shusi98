@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="stylesheet" href="css/bookReserv.css">
+    <title>Book A Table</title>
+</head>
+<body>
+    <div class="container">
+      <img src="images/iStock-1014846068-e1571147363359.jpg" alt="">
+        <div class="header">
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+           <a href="profile.html">Profile</a>
+            <a href="#">Book History</a>
+            <a href="bookReserv.html">Reservation</a>
+            <a href="#">Order</a>
+            <a href="#">Payment Status</a>
+            <a href="#">FAQ's</a>
+            <a href="#">Terms and conditions</a>
+            <button class="logOut" onclick="signOut()">Log Out</button>
+          </div>
+          
+    
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Menu </span>
+
+          <h2>Table Reservation </h2>
+          
+        </div>
+        <div class="info">
+          <div class="form-book">
+            <h2>Book a table</h2>
+            <label for="name">choose date</label><br>
+            <input type="date" id="bookDate"><br>
+            <label for="cars" >Choose time:</label><br>
+  
+          <select name="" id="bookTime">
+            <option value="12:00 AM">12:00 AM</option>
+            <option value="12:30 AM">12:30 AM</option>
+            <option value="1:00 AM">1:00 AM</option>
+            <option value="1:30 AM">1:30 AM</option>
+            <option value="2:00 AM">2:00 AM</option>
+            <option value="2:30 AM">2:30 AM</option>
+            <option value="3:00 AM">3:00 AM</option>
+            <option value="3:30 AM">3:30 AM</option>
+            <option value="4:00 AM">4:00 AM</option>
+            <option value="4:30 AM">4:30 AM</option>
+            <option value="5:00 AM">5:00 AM</option>
+            <option value="5:30 AM">5:30 AM</option>
+          </select><br><br>
+          <label for="">Table for?</label><br>
+          <select name="" id="reservNum">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select><br>
+         <button onclick="bookSubmit()">Sumit</button>
+
+          </div>
+         
+       
+     </div>
+     <div class="center">
+
+     </div>
+    
+
+
+
+
+
+       <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script >
+        // Import the functions you need from the SDKs you need
+      
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDvbnRnLChj9vhIGGZsDGdey8G3ptAVTsI",
+          authDomain: "lets-igawulo.firebaseapp.com",
+          projectId: "lets-igawulo",
+          storageBucket: "lets-igawulo.appspot.com",
+          messagingSenderId: "758294005739",
+          appId: "1:758294005739:web:f9ae4c4430beeeb4513bae",
+          measurementId: "G-4BL0LZ92BG"
+        };
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots:true});
+        firebase.analytics();
+      </script>
+  
+
+  <script src="https://kit.fontawesome.com/8f7c71be78.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+<script src="js/register.js"></script>
+<script src="js/bookResev.js"></script>
+</html>

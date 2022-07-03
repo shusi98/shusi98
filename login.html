@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/login.css">
+    <title>Log In | Sign Up</title>
+</head>
+<body>
+   <div class="cont">
+       <img src="images/backGr.jpg" alt="">
+    <div class="overlay"></div>
+      <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               Login Form
+            </div>
+         </div>
+         <div class="form-container">
+            
+            <div class="form-inner">
+               <div  class="login">
+                  <div class="field">
+               
+                     <input type="email" id="username" placeholder="Email Address" required><br>
+                     <span style="color: red;" id="usernameErr"></span>
+                  </div>
+                  <div class="field">
+                     <input type="password" id="password" placeholder="Password" required><br>
+                     <span style="color: red;" id="passwordErr"></span>
+                  </div>
+                 
+                  <div class="field btn">
+                  
+                     <button class="reg" onclick="getIn()">LogIn</button>
+                    
+                  </div>
+                  <p style="position:relative;left: 8%; top: 8%;">Not a member?<a href="register.html">SignUp</a></p>
+                  <div style="position: relative;display: flex;top: -10%;left: 70%;" class="pass-link">
+                     <a href="#">Forgot password?</a>
+                  </div>
+               </div>
+              
+            </div>
+        
+         </div>
+      </div>
+   </div>
+   </div>
+ 
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+<script >
+    // Import the functions you need from the SDKs you need
+  
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+  apiKey: "AIzaSyC6Z511gNaDEaQKcH_nCv9XFmUWupI_4rw",
+  authDomain: "letsi-igawulo.firebaseapp.com",
+  projectId: "letsi-igawulo",
+  storageBucket: "letsi-igawulo.appspot.com",
+  messagingSenderId: "550112037685",
+  appId: "1:550112037685:web:7d7229a4e6e27163c69a7c",
+  measurementId: "G-HRKCTKX6TV"
+};
+  
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    db.settings({timestampsInSnapshots:true});
+    firebase.analytics();
+  </script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="./js/login.js"></script>
+
+</body>
+</html>

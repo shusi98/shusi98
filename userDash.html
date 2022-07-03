@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+	
+	<!-- My CSS -->
+	<link rel="stylesheet" href="./CSS/userDash.css">
+
+	<title>We</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">WELCOME</span>
+			<div style="position: relative;display: flex;top: 50%;left: -39%;" >
+				<span id="welcome"></span>
+			</div>
+		</a>
+		<ul class="side-menu top">
+			<li class="active" >
+				<a href="userDash.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Menu</span>
+				</a>
+			</li>
+			<li>
+				<a href="Profile.html">
+					<i class='bx bxs-user-rectangle'></i>
+					<span class="text">Profile</span>
+				</a>
+			</li>
+		
+			<li>
+				<a href="userOrders.html">
+					<i class='bx bxs-cart'></i>
+					<span class="text">Oders</span>
+				</a>
+			</li>
+			<li>
+				<a href="bookings.html">
+					<i class='bx bx-restaurant'></i>
+					<span class="text">Reservation</span>
+				</a>
+			</li>
+            <li>
+				<a href="updateBooking.html">
+					<i class='bx bxs-book-alt'></i>
+					<span class="text">Bookings</span>
+				</a>
+			</li>
+            <li>
+				<a href="userDeliveryStatus.html">
+                    <i class='bx bxs-label'></i>
+					<span class="text">Track Delivery Status</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text" onclick="signOut()">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-cart-alt'></i>
+				<span class="num"  data-toggle="modal" data-target="#myModal">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="img/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div style="position: fixed;z-index: 10;" class="head-title">
+				<div class="left">
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Menu</a>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+            
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<div class = 'container'>
+						<div class = 'row' id="rowss">
+							<div class = 'col-md-4 col-lg-4'>
+							  <div class="card" style="width: 18rem;">
+								  <img src="img/choccolate_cake.jpg" class="card-img-top" alt="...">
+								  <div class="card-body">
+									<h3 class="card-title">Choccolate Cake</h3>
+									<h5 class="card-text">same way</h5>
+									<h4 class="card-text">R100</h4>
+									<a class="btn btn-primary">Add to Cart</a>
+									
+								  </div>
+								</div>
+							</div>
+			  
+							<div class = 'col-md-4 col-lg-4'>
+							  <div class="card" style="width: 18rem;">
+								  <img src="img/green_shoe.jpg" class="card-img-top" alt="...">
+								  <div class="card-body">
+									<h3 class="card-title">Green Shoe</h3>
+									<h5 class="card-text">same way</h5>
+									<h4 class="card-text">R80</h4>
+									<a  class="btn btn-primary">Add to Cart</a>
+								  </div>
+								</div>
+							</div>
+			  
+							<div class = 'col-md-4 col-lg-4'>
+							  <div class="card" style="width: 18rem;">
+								  <img src="img/hamburger.jpg" class="card-img-top" alt="...">
+								  <div class="card-body">
+									<h3 class="card-title">Hamburger</h3>
+									<h5 class="card-text">same way</h5>
+									<h4 class="card-text">R50</h4>
+									<a class="btn btn-primary">Add to Cart</a>
+								  </div>
+								</div>
+							</div>
+			  
+						  
+							<div class = 'col-md-4 col-lg-4'>
+							  <div class="card" style="width: 18rem;">
+								  <img src="img/pink_shoe.jpg" class="card-img-top" alt="...">
+								  <div class="card-body">
+									<h3 class="card-title">Pink Shoe</h3>
+									<h5 class="card-text">same way</h5>
+									<h4 class="card-text">R100</h4>
+									<a class="btn btn-primary">Add to Cart</a>
+								  </div>
+								</div>
+							</div>
+			  
+							<div class = 'col-md-4 col-lg-4'>
+							  <div class="card" style="width: 18rem;">
+								  <img src="img/shirt.jpg" class="card-img-top" alt="...">
+								  <div class="card-body">
+									<h3 class="card-title">T Shirt</h3>
+									<h5 class="card-text">same way</h5>
+									<h4 class="card-text">R30</h4>
+									<a class="btn btn-primary">Add to Cart</a>
+								  </div>
+								</div>
+							</div>
+			  
+							<div class = 'col-md-4 col-lg-4'>
+							  <div class="card" style="width: 18rem;">
+								  <img src="img/strawberry_cake.jpg" class="card-img-top" alt="...">
+								  <div class="card-body">
+									<h3 class="card-title">Strawberry Cake</h3>
+									<h4 class="card-text">R100</h4>
+									<a class="btn btn-primary">Add to Cart</a>
+								  </div>
+								</div>
+							</div>
+			  
+						</div>
+					</div>
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" role="dialog">
+						<div class="modal-dialog modal-lg">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <button type="button" class="close" data-dismiss="modal">&times;</button>
+							  <h4 class="modal-title">My Cart</h4>
+							</div>
+							<div class="modal-body">
+									<table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+										<thead>
+											<tr>
+										
+												<th class="uk-table-small sty"><h3>ITEM</h3></th>
+												<th class="uk-table-small"></th>
+												<th class="uk-width-small sty"><h3>PRICE</h3></th>
+												<th class="uk-table-shrink uk-text-small sty"><h3>QUANTITY</h3></th>
+												<th class="uk-table-shrink uk-text-small sty"><h3>TOTAL</h3></th>
+							
+											</tr>
+										</thead>
+										<tbody >
+									  
+							
+										</tbody>
+										<tr>
+										
+										  <td class="uk-table-link">
+											  <h3 class = "item-name"><strong>Grand-Total</strong></h3>
+										  </td>
+										  <td class="uk-text-truncate"><h3></h3></td>
+										  <td class="uk-text-truncate"><h3></h3></td>
+										  <td class="uk-text-truncate grand-total"><h3><strong>R0</strong></h3></td>
+										  
+									  </tr>
+									</table>
+							
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" onclick="submitOrder()">Order Now</button>
+							  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						  </div>
+						</div>
+					  </div>
+
+
+		<div class="food-load">
+
+
+
+        </div>
+      
+        
+               
+				<!--div class="todo">
+                   
+				</div-->
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    
+    <script >
+        // Import the functions you need from the SDKs you need
+      
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+  apiKey: "AIzaSyC6Z511gNaDEaQKcH_nCv9XFmUWupI_4rw",
+  authDomain: "letsi-igawulo.firebaseapp.com",
+  projectId: "letsi-igawulo",
+  storageBucket: "letsi-igawulo.appspot.com",
+  messagingSenderId: "550112037685",
+  appId: "1:550112037685:web:7d7229a4e6e27163c69a7c",
+  measurementId: "G-HRKCTKX6TV"
+};
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots:true});
+        firebase.analytics();
+      </script>
+  
+
+  <script src="https://kit.fontawesome.com/8f7c71be78.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="./JS/userDash.js"></script>
+</body>
+</html>

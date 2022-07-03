@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="stylesheet" href="./css/logged.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>signed In | Home</title>
+</head>
+<body>
+    <div class="container">
+ 
+      <!--img src="images/chicken.jpg" alt=""-->
+        <div class="header">
+
+          <div class="shopping-bag">
+                <div class="total-items-in-cart">
+                    0
+                </div>
+            </a>
+        </div>
+         
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <i class="fas fa-solid fa-user"></i><a href="profile.html">Profile</a>
+            <a href="#">Book History</a>
+            <a href="bookReserv.html">Reservation</a>
+            <a href="#">Order</a>
+            <a href="#">Payment Status</a>
+            <a href="#">FAQ's</a>
+            <a href="#">Terms and conditions</a>
+            <button class="logOut" onclick="signOut()">Log Out</button>
+          </div>
+          
+    
+          <span style="font-size:30px;cursor:pointer;color: aqua;left: 5px;" onclick="openNav()">&#9776;Menu </span>
+
+          <input type="text" placeholder="Search for the cousine & beverage of your choice">
+        
+          
+        </div>
+        <div class="notBell">
+          <button style="position: relative; justify-content: center;text-align: center; color: white; background: red; width: 60%; height: 40%;" class="open-button" onclick="openForm()">View Cart</button>
+        </div>
+        
+        <div class="form-popup animate" id="myForm">
+          <div class="overlay"></div>
+          <form class="form-container">
+            <div class="cart">
+              <div class="cart-header">
+                  <div class="column1">Item</div>
+                  <div class="column2">Unit price</div>
+                  <div class="column3">Units</div>
+              </div>
+              <div class="cart-items">
+                  <!-- render cart items here -->
+                 
+              </div>
+              <div class="cart-footer">
+                  <div class="subtotal">
+                      
+                  </div>
+                  <div class="checkout">
+                      Proceed to checkout
+                  </div>
+              </div>
+          </div>
+            <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+          </form>
+        </div>
+     
+        <div class="inner-links">
+          <ol>
+            <li>food</li><span>/</span>
+            <li><a href="beverage.html">Beverages</a><span></li></span>
+              
+          </ol>
+        </div>
+       
+        <div class="info">
+
+       
+          </div>
+        
+        
+     <div class="center">
+
+     </div>
+    
+
+     <script>
+      const porductsListEl = document.querySelector(".container");
+      const seeMoreBtn = document.querySelector(".see-more-btn");
+
+      seeMoreBtn.addEventListener('click', () => {
+          porductsListEl.scrollIntoView({behavior: "smooth"})
+      })
+  </script>
+<script src="./js/products.js"></script>
+<script src="./js/logged.js"></script>
+</body>
+</html>

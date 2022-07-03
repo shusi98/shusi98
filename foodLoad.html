@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./CSS/foodLoad.css">
+
+	<title>Food Load</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">AdminHub</span>
+		</a>
+		<ul class="side-menu top">
+			<li>
+				<a href="#">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="foodLoad.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Food Load</span>
+				</a>
+			</li>
+			<li>
+				<a href="manageFood.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Manage Food</span>
+				</a>
+			</li>
+			<li>
+				<a href="manageOrders.html">
+					<i class='bx bxs-cart'></i>
+					<span class="text">Order Manage</span>
+				</a>
+			</li>
+            <li>
+				<a href="bookingManage.html">
+					<i class='bx bxs-book-alt'></i>
+					<span class="text">Reservation Manage</span>
+				</a>
+			</li>
+			<li>
+				<a href="manageDelivery.html">
+					<i class='bx bxs-book-alt'></i>
+					<span class="text">Delivery Manage</span>
+				</a>
+			</li>
+            <li>
+				<a href="manageUser.html">
+                    <i class='bx bxs-user-account bx-rotate-0' ></i>
+					<span class="text">Manage users</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="manageAdmins.html">
+                    <i class='bx bxs-user-account bx-rotate-0' ></i>
+					<span class="text">Manage Admins</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="img/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Food Load</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="index.html">Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		<div class="food-load">
+            
+        </div>
+
+
+			<div class="table-data">
+				<div class="order">
+                    <div class="container-fluid px-1 py-5 mx-auto">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                               
+                                   <div>
+                                        <div class="row justify-content-between text-left">
+                                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Product Name<span class="text-danger"> </span></label>
+                                                 <input type="text" id="product-name" placeholder="Enter product name"> </div>
+                                            <div class="form-group col-sm-6 flex-column d-flex"> 
+                                                <label class="form-control-label px-3">Product Price<span class="text-danger"> </span></label> 
+                                                <input type="text" id="product-price"  placeholder="Enter Product price"> </div>
+                                        </div>
+                                        <div class="row justify-content-between text-left">
+                                            <div class="form-group col-sm-6 flex-column d-flex"> 
+                                                <label class="form-control-label px-3">Choose a file<span class="text-danger"> </span></label> 
+                                             
+                                                <input type="file" name="" id="imag"></div>
+                                                
+                                                <textarea style="position: relative;display: flex;left: -1%;" id="product-description" cols="40" rows="0" placeholder="Product Description"></textarea>
+                                           
+                                        </div>
+                                        <progress style="position: relative; display: flex; left: 0%;" id="progress-status" value="0" max="100"></progress><br>
+                                        <span id="upProgress"></span>
+                                        <div class="row justify-content-end">
+                                            <div class="form-group col-sm-6">
+                                                 <button  class="btn-block btn-primary" onclick="aploadproduct()">Load Data</button> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+				<!--div class="todo">
+                   
+				</div-->
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+		
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    
+    <script >
+        // Import the functions you need from the SDKs you need
+      
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+  apiKey: "AIzaSyC6Z511gNaDEaQKcH_nCv9XFmUWupI_4rw",
+  authDomain: "letsi-igawulo.firebaseapp.com",
+  projectId: "letsi-igawulo",
+  storageBucket: "letsi-igawulo.appspot.com",
+  messagingSenderId: "550112037685",
+  appId: "1:550112037685:web:7d7229a4e6e27163c69a7c",
+  measurementId: "G-HRKCTKX6TV"
+};
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots:true});
+        firebase.analytics();
+      </script>
+  
+
+  <script src="https://kit.fontawesome.com/8f7c71be78.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./JS/foodLoad.js"></script>
+	
+</body>
+</html>

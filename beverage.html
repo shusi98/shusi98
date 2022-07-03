@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="stylesheet" href="css/logged.css">
+    <title>signed In | Home</title>
+</head>
+<body>
+    <div class="container">
+ 
+      <!--img src="images/chicken.jpg" alt=""-->
+        <div class="header">
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+           <a href="profile.html">Profile</a>
+            <a href="#">Book History</a>
+            <a href="bookReserv.html">Reservation</a>
+            <a href="#">Order</a>
+            <a href="#">Payment Status</a>
+            <a href="#">FAQ's</a>
+            <a href="#">Terms and conditions</a>
+            <button class="logOut" onclick="signOut()">Log Out</button>
+          </div>
+          
+    
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Menu </span>
+
+          <input type="text" placeholder="Search for the cousine & beverage of your choice">
+          
+        </div>
+        <div class="inner-links">
+          <ol>
+            <li>
+              <a href="logged.html">food</a></li>
+              <li>beverage</li>
+          </ol>
+        </div>
+       
+       
+        <div class="info" id="list-product">
+        
+          <div class="col-md-3">
+            <div class="firstP">
+              <img src="images/food/Gizards.jpg" alt="">
+            </div>
+           <div class="infoProd">
+             <h2>chicken</h2><br>
+             <h3>get your self 4 pc along with free coke 440ml</h3><br>
+             <h4>R 74 .00</h4>
+               
+           </div>
+           
+           <button class="add">Add to Cart</button>
+            
+        </div>
+        </div>
+
+       
+       
+     </div>
+     <div class="center">
+
+     </div>
+    
+
+
+
+
+
+       <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script >
+        // Import the functions you need from the SDKs you need
+      
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDvbnRnLChj9vhIGGZsDGdey8G3ptAVTsI",
+          authDomain: "lets-igawulo.firebaseapp.com",
+          projectId: "lets-igawulo",
+          storageBucket: "lets-igawulo.appspot.com",
+          messagingSenderId: "758294005739",
+          appId: "1:758294005739:web:f9ae4c4430beeeb4513bae",
+          measurementId: "G-4BL0LZ92BG"
+        };
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots:true});
+        firebase.analytics();
+      </script>
+  
+
+  <script src="https://kit.fontawesome.com/8f7c71be78.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="js/register.js"></script>
+<script src="js/logged.js"></script>
+<script src="js/adminLoad.js"></script>
+</body>
+</html>

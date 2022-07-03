@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./CSS/manageUser.css">
+
+	<title>Food Load</title>
+</head>
+<body onload="selectAllData()">
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">AdminHub</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="#">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="foodLoad.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Food Load</span>
+				</a>
+			</li>
+			<li>
+				<a href="manageFood.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Manage Food</span>
+				</a>
+			</li>
+			<li>
+				<a href="manageOrders.html">
+					<i class='bx bxs-cart'></i>
+					<span class="text">Order Manage</span>
+				</a>
+			</li>
+            <li>
+				<a href="bookingManage.html">
+					<i class='bx bxs-book-alt'></i>
+					<span class="text">Reservation Manage</span>
+				</a>
+			</li>
+			<li>
+				<a href="manageDelivery.html">
+					<i class='bx bxs-book-alt'></i>
+					<span class="text">Delivery Manage</span>
+				</a>
+			</li>
+            <li>
+				<a href="manageUser.html">
+                    <i class='bx bxs-user-account bx-rotate-0' ></i>
+					<span class="text">Manage users</span>
+				</a>
+			</li>
+			<li>
+				<a href="manageAdmins.html">
+                    <i class='bx bxs-user-account bx-rotate-0' ></i>
+					<span class="text">Manage Admins</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text" onclick="signOut()">Logout</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" id="myInput" placeholder="Search...">
+					
+					<button type="submit" id="searchBtn" class="search-btn"><i class='bx bx-search'  onclick="myFunction()"></i></button>
+				</div>
+			</form>
+			<select style="position: relative;display: flex;left: -30%; width: 10%;height: 60%; background: rgb(201, 195, 195); border: 2px solid grey; border-radius: 10px;" class="form-select" aria-label="Default select example" id="catergory">
+				<option selected>Filter By..</option>
+				<option value="1">Name</option>
+				<option value="2">Surname</option>
+				<option value="3">Address</option>
+			  </select>
+			
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="img/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Manage Users</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="index.html">Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		<div class="food-load">
+            
+        </div>
+
+
+			<div class="table-data">
+				<div class="order">
+                    <div class="head">
+						<h3>User Manage</h3>
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+                    <div class="hold">
+						<button style="position: relative; display: flex; left: 85%;top: 38px;" type="button" class="btn btn-primary" onclick="printTable()" >Print</button>
+						<button style="position: relative; display: flex; left: 90%;" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#myModal2">+Add User</button><br>
+                        <table id="show">
+                            <thead>
+                                <tr>
+									<th>Name</th>
+									<th>Surname</th>
+                                    <th>Username</th>
+                                    <th>Password</th>
+                                    <th>Cellphone Number</th>
+                                    <th>Address</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-info">
+                                <tr>
+									<td class="Name">sipho</td>
+									<td class="Surname">Nkosi</td>
+                                    <td >@gmal</td>
+                                    <td>123456</td>
+                                    <td>0762650042</td>
+                                    <td>po box 123</td>
+									<td class="show">
+										<span class="updateIm"> <img src="./img/edit.png" alt="" data-toggle="modal" data-target="#myModal"></span>
+										<span class="deleteIm"> <img src="./img/delete.png" alt=""></span>
+									</td>
+    
+                                </tr>
+    
+                                
+                            </tbody>
+                        </table>
+						<!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+						Open modal
+					  </button-->
+					
+					  <!-- The Modal -->
+					  <div class="modal fade" id="myModal">
+						<div class="modal-dialog modal-xl">
+						  <div class="modal-content">
+						  
+							<!-- Modal Header -->
+							<div class="modal-header">
+							  <h4 class="modal-title">Update User profile</h4>
+							  <button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							
+							<!-- Modal body -->
+							<div class="modal-body">
+								<div>
+									<div class="form-row">
+										<div class="form-group col-md-6">
+											<label >Cellphone</label>
+											<input type="text" class="form-control" id="cell" ><br>
+										  </div>
+										  <div class="form-group col-md-6">
+											<label >Address</label><br>
+											<textarea name="" id="address" cols="45" rows="5"></textarea>
+										  </div>
+									  
+									  <button type="submit" class="btn btn-primary" onclick=" updateProduct()">Update</button>
+								  
+								</div>
+								
+							</div>
+							
+							<!-- Modal footer -->
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							</div>
+							
+						  </div>
+						</div>
+					  </div>
+					  
+					</div>
+					<div class="modal fade" id="myModal2">
+						<div class="modal-dialog modal-xl">
+						  <div class="modal-content">
+						  
+							<!-- Modal Header -->
+							<div class="modal-header">
+							  <h4 class="modal-title">Adding A User</h4>
+							  <button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							
+							<!-- Modal body -->
+							<div class="modal-body">
+                                <section class="h-100 h-custom" style="background-color: #8fc4b7;">
+                                    <div class="container py-5 h-100">
+                                      <div class="row d-flex justify-content-center align-items-center h-100">
+                                        <div class="col-lg-8 col-xl-6">
+                                          <div class="card rounded-3">
+                                          
+                                            <div class="card-body p-4 p-md-5">
+                                              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Register User</h3>
+                                  
+                                              <div>
+                                                <div class="form-group">
+                                                  <label for="exampleInputName">Name</label>
+                                                  <input type="text" class="form-control" id="fName" placeholder=" enter your name">
+                                               </div>
+                                               <div class="form-group">
+                                                <label for="exampleInputSurname">Surname</label>
+                                                <input type="text" class="form-control" id="surname" placeholder=" enter your surname">
+                                             </div>
+                                                <div class="form-group">
+                                                  <label for="exampleInputEmail1">Email address</label>
+                                                  <input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="enter email">
+                                                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="exampleInputPassword1">Password</label>
+                                                  <input type="password" class="form-control" id="password" placeholder="Password">
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="exampleInputPassword2">Confirm Password</label>
+                                                  <input type="password" class="form-control" id="confirmPass" placeholder="Confirm Password">
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="exampleInputCellphone">Cellphone</label>
+                                                  <input type="text" class="form-control" id="cellN" placeholder="cellphone Number">
+                                                </div>
+                                             <div class="form-group">
+                                              <label for="exampleFormControlTextarea1">Postal Address</label>
+                                              <textarea class="form-control" id="postAddress" rows="3"></textarea>
+                                            </div>
+                                                
+                                                <button type="submit" class="btn btn-primary" onclick="register()">Register</button>
+                                              </div>
+                                  
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </section>
+								
+							</div>
+							
+							<!-- Modal footer -->
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							</div>
+							
+						  </div>
+						</div>
+					  </div>
+					  
+                    </div>
+					
+                 </div>
+				</div>
+				<div class="printt" id="printItHere">
+					<thead>
+						<th>Name</th>&nbsp;
+						<th>Surname</th>&nbsp;
+						<th>Username</th>&nbsp;
+						<th>Password</th>&nbsp;
+						<th>Cellphone</th>&nbsp;
+						<th>Address</th>
+			
+					</thead>
+						<p id="info">
+
+						</p>
+
+				</div>
+				<!--div class="todo">
+                   
+				</div-->
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script >
+        // Import the functions you need from the SDKs you need
+      
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+  apiKey: "AIzaSyC6Z511gNaDEaQKcH_nCv9XFmUWupI_4rw",
+  authDomain: "letsi-igawulo.firebaseapp.com",
+  projectId: "letsi-igawulo",
+  storageBucket: "letsi-igawulo.appspot.com",
+  messagingSenderId: "550112037685",
+  appId: "1:550112037685:web:7d7229a4e6e27163c69a7c",
+  measurementId: "G-HRKCTKX6TV"
+};
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots:true});
+        firebase.analytics();
+      </script>
+  
+
+  <script src="https://kit.fontawesome.com/8f7c71be78.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="./JS/manageUser.js"></script>
+</body>
+</html>

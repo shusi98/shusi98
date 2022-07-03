@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="stylesheet" href="css/booHist.css">
+    <title>Order | Home</title>
+</head>
+<body onload="displayUserInfo()">
+    
+    <div class="container">
+      <img src="images/chicken.jpg" alt="">
+    
+      <div class="order">
+        <h2>Order</h2>
+    </div>
+
+        <div class="header">
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+           <a href="#">Profile</a>
+            <a href="#">Book History</a>
+            <a href="bookReserv.html">Reservation</a>
+            <a href="#">Payment Status</a>
+            <a href="#">FAQ's</a>
+            <a href="#">Terms and conditions</a>
+            <button class="logOut" onclick="signOut()">Log Out</button>
+          </div>
+          
+    
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Menu </span>
+          <input type="text" placeholder="Search for the cousine & beverage of your choice">
+
+
+          
+        </div>
+      
+        <h1>Welcome Suprise you're succesfull Login</h1>
+        <div class="info">
+         <div class="order1">
+             <h2>Steak & Ribs</h2>
+             <p>DGRADSDNBHGJ</p>
+             <p>3 December 2021</p>
+             <button>Delivery</button>
+
+            
+         </div><br>
+         <div class="order2">
+            <h2>Mogodu</h2>
+            <p>DGRADSDNBHGJ</p>
+            <p>9 December 2021</p>
+            
+
+           
+        </div><br>
+        <div class="order3">
+            <h2>Full Chicken and Rice</h2>
+            <p>GFHHJKJMHBBH</p>
+            <p>22 December 2021</p>
+
+           
+        </div><br>
+        <div class="order4">
+            <h2>Beef Stew and Rice</h2>
+            <p>JKHJGHGJHKJHJH</p>
+            <p>27 December 2021</p>
+
+           
+        </div><br>
+        <div class="order5">
+            <h2>Pork head</h2>
+            <p>GFHHJKJMHBBH</p>
+            <p>01 January 2022</p>
+
+           
+        </div>
+         
+          
+        </div>
+
+       
+       
+     </div>
+     <div class="center">
+
+     </div>
+    
+
+
+
+    </div>
+
+       <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script >
+        // Import the functions you need from the SDKs you need
+      
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDvbnRnLChj9vhIGGZsDGdey8G3ptAVTsI",
+          authDomain: "lets-igawulo.firebaseapp.com",
+          projectId: "lets-igawulo",
+          storageBucket: "lets-igawulo.appspot.com",
+          messagingSenderId: "758294005739",
+          appId: "1:758294005739:web:f9ae4c4430beeeb4513bae",
+          measurementId: "G-4BL0LZ92BG"
+        };
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots:true});
+        firebase.analytics();
+      </script>
+  
+
+  <script src="https://kit.fontawesome.com/8f7c71be78.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</body>
+<script src="js/register.js"></script>
+<script src="js/booHist.js"></script>
+</html>

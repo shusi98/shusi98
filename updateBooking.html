@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!--link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"-->
+	
+	<!-- My CSS -->
+	<link rel="stylesheet" href="./CSS/userProfile.css">
+
+	<title>Profile</title>
+</head>
+<body onload="selectAllData()">
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">WELCOME</span>
+			<div style="position: relative;display: flex;top: 50%;left: -39%;" >
+				<span id="welcome"></span>
+			</div>
+		</a>
+		<ul class="side-menu top">
+			<li class="active" >
+				<a href="userDash.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Menu</span>
+				</a>
+			</li>
+			<li>
+				<a href="Profile.html">
+					<i class='bx bxs-user-rectangle'></i>
+					<span class="text">Profile</span>
+				</a>
+			</li>
+		
+			<li>
+				<a href="userOrders.html">
+					<i class='bx bxs-cart'></i>
+					<span class="text">Oders</span>
+				</a>
+			</li>
+			<li>
+				<a href="bookings.html">
+					<i class='bx bx-restaurant'></i>
+					<span class="text">Reservation</span>
+				</a>
+			</li>
+            <li>
+				<a href="updateBooking.html">
+					<i class='bx bxs-book-alt'></i>
+					<span class="text">Bookings</span>
+				</a>
+			</li>
+            <li>
+				<a href="userDeliveryStatus.html">
+                    <i class='bx bxs-label'></i>
+					<span class="text">Track Delivery Status</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text" onclick="signOut()">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="img/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div style="position: fixed;z-index: 10;" class="head-title">
+				<div class="left">
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Profile</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="userDash.html">Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+            
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Bookings Made</h3>
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+
+					
+					<table>
+						<thead>
+							<tr>
+                                <th>Name</th>
+								<th>Surname</th>
+								<th>Book Date</th>
+								<th>Book Time</th>
+                                <th>No Of Visitors</th>
+								<th>Ref No</th>
+                                <th>Action</th>
+							</tr>
+						</thead>
+						<tbody id="table-info">
+							<tr>
+                                <td></td>
+                                <td></td>
+                                <td> </td>
+                                <td style="overflow: hidden;"><strong><span id="Messg" style="position: relative; overflow: hidden; display: flex;text-align: center; left: 38%; color: red; overflow-x:hidden;">No Records</span></strong></td>
+                                <td></td>
+                                <td></td>
+                                <td class="show">
+                                    <span class="updateIm"></span>
+                                    <span class="deleteIm"></span>
+                                </td>
+                            </tr>
+
+
+							
+						</tbody>
+						
+					</table>
+					
+					
+					<!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+						Open modal
+					  </button-->
+					
+					  <!-- The Modal -->
+					  <div class="modal fade" id="myModal">
+						<div class="modal-dialog modal-xl">
+						  <div class="modal-content">
+						  
+							<!-- Modal Header -->
+							<div class="modal-header">
+							  <h4 class="modal-title">Update Bookings</h4>
+							  <button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							
+							<!-- Modal body -->
+							<div class="modal-body">
+								<div>
+									<div class="form-row">
+										<div class="form-group col-md-6">
+										  <label for="inputEmail4">Book Date</label><br>
+										  <input style="position: relative; left: 0%; width: 50%;height: 50%; " type="date" name="" id="bkDate">
+										</div>
+										<div class="form-group col-md-6">
+										  <label style="position: relative; left: -40%;" for="inputPassword4">Booking Time</label><br>
+										  <select style="position: relative; left: -40%; width: 50%;height: 50%; " name="" id="bkTime">
+											
+										  </select>
+										</div>
+										<div class="form-group col-md-6">
+											<label for="inputEmail4">No of Visitors</label><br>
+											<input  style="position: relative; left: 0%; width: 50%;height: 50%; " type="text" id="noVisitors">
+										  </div>
+									  </div>
+									  
+									  <button type="submit" class="btn btn-primary" onclick=" updateProduct()">Update</button>
+								  
+								</div>
+								
+							</div>
+							
+							<!-- Modal footer -->
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							</div>
+							
+						  </div>
+						</div>
+					  </div>
+					
+				</div>
+			
+				<!--div class="todo">
+                   
+				</div-->
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    
+    <script >
+        // Import the functions you need from the SDKs you need
+      
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+  apiKey: "AIzaSyC6Z511gNaDEaQKcH_nCv9XFmUWupI_4rw",
+  authDomain: "letsi-igawulo.firebaseapp.com",
+  projectId: "letsi-igawulo",
+  storageBucket: "letsi-igawulo.appspot.com",
+  messagingSenderId: "550112037685",
+  appId: "1:550112037685:web:7d7229a4e6e27163c69a7c",
+  measurementId: "G-HRKCTKX6TV"
+};
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots:true});
+        firebase.analytics();
+      </script>
+  
+
+  <script src="https://kit.fontawesome.com/8f7c71be78.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="./JS/updateBooking.js"></script>
+</body>
+</html>
