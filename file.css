@@ -1,0 +1,18 @@
+body 
+{
+    
+
+}
+.row
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+}
+.col-md-3
+{
+  
+}

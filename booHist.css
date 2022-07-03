@@ -1,0 +1,190 @@
+
+body
+{
+    position: relative;
+    display:flex;
+    width: 100vw;
+    height: 100vh;
+    overflow:hidden
+
+}
+.container
+{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+    background: rgb(235, 226, 226);
+ }
+ .header
+{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 15%;
+    top: 0%;
+    background: rgb(0, 140, 233);
+    border-radius: 10px;
+
+}
+.header input
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    height: 30%;
+    left: 15%;
+    top: 50%;
+    border-radius: 2px;
+    font-size: 18px;
+    border: none;
+}
+
+.container h1
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    left: 30%;
+    top: 10%;
+    color: rgb(19, 50, 226);
+
+}
+.container h2{
+
+    position: relative;
+    color: rgba(0, 0, 0, 0.911);
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  
+
+}
+.container button
+{
+    position: absolute;
+    justify-content: right;
+    width: 90px;
+    height: 30px;
+    left: 49px;
+    top: 62%;
+    background: rgba(16, 87, 194, 0.795);
+    color: wheat;
+    border-radius: 5px;
+}
+.container .info
+{
+    position: fixed;
+    background:none;
+    width: 60%;
+    height: 90%;
+    top: 17%;
+    left:22%;
+    background: #fefefe;
+    z-index: 0;
+    padding: 25px;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    overflow-y: auto;
+     
+}
+.container .info .order1{
+
+    position: relative;
+    border-radius: 15px;
+    background-color: antiquewhite;
+
+  
+}
+.container .info .order1 button{
+
+    position: relative;
+    left: 1000px;
+    top: -50px;
+}
+.container .info .order2{
+
+    position: relative;
+    border-radius: 15px;
+    background-color: antiquewhite;
+
+}
+.container .info .order3{
+
+    position: relative;
+    border-radius: 15px;
+    background-color: antiquewhite;
+}
+.container .info .order4{
+
+    position: relative;
+    border-radius: 15px;
+    background-color: antiquewhite;
+}
+.container .info .order5{
+
+    position: relative;
+    border-radius: 15px;
+    background-color: antiquewhite;
+}
+.container img
+{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+  }
+  
+  .sidenav {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(15, 99, 177);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+      text-align: left;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fefefe;
+    display: block;
+    transition: 0.3s;
+    padding: 25px;
+    top: 5%;
+    border-bottom: 2px solid grey;
+  }
+  
+  .sidenav a:hover {
+    color: rgb(148, 105, 24);
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
